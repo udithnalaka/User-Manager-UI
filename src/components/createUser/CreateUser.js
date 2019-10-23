@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {createUserAPI} from '../../actions/Action';
 
 class CreateUser extends Component {
 
@@ -9,12 +10,14 @@ class CreateUser extends Component {
             name : '',
             age : 0,
             sex : '',
-            email : ''
+            email : '',
+
+            newUser : []
         };
 
         this.changeHandler = this.changeHandler.bind(this);
         this.submitHandler = this.submitHandler.bind(this);
-    };
+    }
 
     changeHandler(event) {
         const value = event.target.value;
@@ -26,10 +29,23 @@ class CreateUser extends Component {
     }
        
     submitHandler(event) {
-        alert('Users name: ' + this.state.name + ' sex: ' + this.state.sex);
-        //TODO: call API to save a user.
-        event.preventDefault();
+        let { name, age, sex, email} = this.state;
+
+        //call API to save a user.
+        createUserAPI(this, name, age, sex, email);
     }
+
+     //set the data returned from create User API call
+     setNewUser(results) {
+        this.setState({
+            newUser : results.data
+        })
+    }
+
+     //display if any error from API calls.
+    showError(err) {
+    }
+
     
     render() {
         return (
