@@ -20,8 +20,9 @@ export const createUserAPI = (originComp, name, age, sex, email) => {
 //call backend to get the List of Users.
 export const getUserListAPI = (originComp) => {
     
-    const url = `http://localhost:8080/api/v1/users`;
-
+    //const url = 'http://localhost:8080/api/v1/users';
+    const url = '../data/users.json';
+    
     fetch(url, {
         method: 'GET',
         headers: {

@@ -1,0 +1,18 @@
+[
+        {
+            "id": 1,
+            "name": "Udith Nalaka",
+            "age": 35,
+            "sex": "male",
+            "status": "ACTIVE",
+            "email": "u@n.com"
+        },
+        {
+            "id": 2,
+            "name": "Ira Rana",
+            "age": 25,
+            "sex": "female",
+            "status": "ACTIVE",
+            "email": "i@r.com"
+        }
+    ]

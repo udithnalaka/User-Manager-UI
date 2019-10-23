@@ -18,8 +18,8 @@ class ListUser extends Component {
             <thead>
                 <tr> 
                     {
-                        headerCols.map((colData) => {
-                            return <th>{colData.label}</th>
+                        headerCols.map((colData, index) => {
+                            return <th key={index}>{colData.label}</th>
                         })
                     }
                 </tr>
@@ -34,13 +34,13 @@ class ListUser extends Component {
         return ( 
             <tbody> 
                 {
-                    userList.map((rowData) => {
+                    userList.map((rowData, index) => {
                         return (
-                            <tr>
+                            <tr key={index}>
                                 {
-                                    headerCols.map((colData) => { 
+                                    headerCols.map((colData, index) => { 
                                         return (
-                                            <td>
+                                            <td key={'td' + index}>
                                                 {rowData[colData.key]}
                                             </td>
                                         )
